@@ -1,8 +1,6 @@
 #ifndef SDDS_SHOPPINGLIST_H
 #define SDDS_SHOPPINGLIST_H
-
 #include "ShoppingRec.h"
-
 namespace sdds {
 
 	bool loadList();

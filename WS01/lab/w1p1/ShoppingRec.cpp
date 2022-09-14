@@ -1,9 +1,7 @@
 #include <iostream>
-using namespace std;
-
 #include "ShoppingRec.h"
 #include "Utils.h"
-
+using namespace std;
 namespace sdds {
 	ShoppingRec getShoppingRec() {
 		ShoppingRec R = {};

@@ -1,9 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-using namespace std;
-
 #include "File.h"
-
+using namespace std;
 namespace sdds {
 	const char* const SHOPPING_DATA_FILE = "shoppinglist.csv";
 	FILE* sfptr = nullptr;
