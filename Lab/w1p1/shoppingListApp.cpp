@@ -7,7 +7,7 @@ using namespace std;
 using namespace sdds;
 
 // set to false when compiling on linux
-const bool APP_OS_WINDOWS = true;
+const bool APP_OS_WINDOWS = false;
 
 int listMenu();
 
