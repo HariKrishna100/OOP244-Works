@@ -1,7 +1,5 @@
-﻿  File.cpp
-  ShoppingList.cpp
-  ShoppingRec.cpp
-  Utils.cpp
-  shoppingListApp.cpp
-  Generating Code...
-  w1p1.vcxproj -> C:\Users\Harikrishna Patel\Desktop\3rd\OOP244\OOP244-Works\WS01\lab\w1p1\x64\Debug\w1p1.exe
+﻿  Utils.cpp
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+    Hint on symbols that are defined and could potentially match:
+      "int __cdecl sdds::main(void)" (?main@sdds@@YAHXZ)
+C:\Users\Harikrishna Patel\Desktop\3rd\OOP244\OOP244-Works\WS01\lab\w1p1\x64\Debug\w1p1.exe : fatal error LNK1120: 1 unresolved externals
