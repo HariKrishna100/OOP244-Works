@@ -5,11 +5,10 @@ Full Name  : Harikrishna Paresh Patel
 Student ID#: 150739217
 Email      : Hpatel296@myseneca.ca
 Section    : NAA
-
+Date       : 16/09/2022
 Authenticity Declaration:
-I declare this submission is the result of my own work and has not been
-shared with any other student or 3rd party content provider. This submitted
-piece of work is entirely of my own creation.
+I have done all the coding by myself and only copied the code that my professor
+provided to complete my workshops and assignments.
 *****************************************************************************
 */
 
