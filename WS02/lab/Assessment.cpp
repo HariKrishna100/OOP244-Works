@@ -32,7 +32,14 @@ namespace sdds {
     }
 
     void freeMem(Assessment*& aptr, int size) {
-
+        int* array{};
+        for (int i = 0; i < size; i++)
+        {
+            delete[] &aptr->m_mark[i];
+            delete[] &aptr->m_title[i];
+        }
+        delete[] array;
+        array = nullptr;
     }
 
     int read(Assessment*& aptr, FILE* fptr) {
@@ -44,6 +51,10 @@ namespace sdds {
         for (i = 0; i < num; i++)
         {
             read(aptr[i], fptr);
+        }
+        if (i != num)
+        {
+            freeMem(aptr, num);
         }
         return num;
     }
