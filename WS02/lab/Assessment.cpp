@@ -21,8 +21,7 @@ namespace sdds {
 
         read(mark, fptr);
         read(str, fptr);
-        if (mark && str)
-        {
+        if (mark && str) {
             asmnt.m_mark = new double;
             asmnt.m_title = new char[60 + 1];
             *asmnt.m_mark = mark;
@@ -32,29 +31,25 @@ namespace sdds {
     }
 
     void freeMem(Assessment*& aptr, int size) {
-        int* array{};
-        for (int i = 0; i < size; i++)
-        {
+        aptr = new Assessment[size]{};
+        for (int i = 0; i < size; i++) {
             delete[] &aptr->m_mark[i];
             delete[] &aptr->m_title[i];
         }
-        delete[] array;
-        array = nullptr;
+        delete[] aptr;
+        aptr = nullptr;
     }
 
     int read(Assessment*& aptr, FILE* fptr) {
-        int* array = nullptr;
         int num, i;
         read(num, fptr);
-        array = new int[num];
+        aptr = new Assessment[num];
 
-        for (i = 0; i < num; i++)
-        {
+        for (i = 0; i < num; i++) {
             read(aptr[i], fptr);
         }
-        if (i != num)
-        {
-            freeMem(aptr, num);
+        if (i != num) {
+           freeMem(aptr, num);
         }
         return num;
     }
