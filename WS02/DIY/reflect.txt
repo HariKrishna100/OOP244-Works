@@ -1,0 +1,22 @@
+/*
+*****************************************************************************
+						  Diy - #2 
+Full Name  : Harikrishna Paresh Patel
+Student ID#: 150739217
+Email      : Hpatel296@myseneca.ca
+Section    : NAA
+Date       : 16/09/2022
+Authenticity Declaration:
+I have done all the coding by myself and only copied the code that my professor
+provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+from this workshop i have learnt a lot and put in place practice to dynamically
+allocate memory even though its was really had to fix up the memory leak errors
+this helped me to effectively debug code and try diffrent ways to make a fix but
+i would thank Fardad as he gave us more time to try and fix the memory leak 
+problems i had been bad in reading files and through this workshops i have been
+practicing and getting better the part 2 was challenging too as we had to 
+implement the code and fuctions to accomplish the task overally the tasks are easy
+but hard at the same time as things go wrong and take time to solve.
