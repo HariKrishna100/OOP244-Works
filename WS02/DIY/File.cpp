@@ -39,5 +39,13 @@ namespace sdds {
    void closeFile() {
       if (fptr) fclose(fptr);
    }
+   // read postal code records
+   bool read(char m_code[]) {
+       return fscanf(fptr, "%[^,],", m_code) == 1;
+   }
+   // read population records 
+   bool read(int& m_figure) {
+       return fscanf(fptr, "%d\n", &m_figure) == 1;
+   }
 
 }

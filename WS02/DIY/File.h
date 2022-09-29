@@ -23,6 +23,9 @@ namespace sdds {
    // Finds the records kept in the file to be used for the dynamic memory allocation 
    // of the records in the file
    int noOfRecords();
-
+   // read postal code records
+   bool read(char m_code[]);
+   // read population records 
+   bool read(int& m_figure);
 }
 #endif // !SDDS_FILE_H_
