@@ -1,6 +1,6 @@
 /*
 *****************************************************************************
-                          Lab - #1 (P1)
+                          Diy - #2 
 Full Name  : Harikrishna Paresh Patel
 Student ID#: 150739217
 Email      : Hpatel296@myseneca.ca
