@@ -78,13 +78,13 @@ namespace sdds {
 		short expMon,
 		short expYear) {
 		
-		bool success = false;
-
 		cleanUp();
 
+		bool success = validate(cc_name, cc_no, cvv, expMon, expYear);
 		if (success)
 		{
 			m_Cardholdername = new char [strlen(cc_name) + 1];
+			strcpy(m_Cardholdername, cc_name);
 			m_CVV = cvv;
 			m_expMon = expMon;
 			M_expYear = expYear;
