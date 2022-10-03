@@ -16,6 +16,7 @@ provided to complete my workshops and assignments.
 #include "CC.h"
 using namespace std;
 namespace sdds {
+	// verify credit card information
 	bool CC::validate(const char* name,
 		unsigned long long cardNo,
 		short cvv,
@@ -43,7 +44,9 @@ namespace sdds {
 		return success;
 	}
 
+	// Prints a 16-digit number in a set of 4-digit numbers separated by spaces
 	void CC::prnNumber()const {
+		// Setting first 4 digits
 		cout.width(4);
 		cout.fill('0');
 		cout.setf(ios::right);
@@ -51,6 +54,7 @@ namespace sdds {
 		cout.fill(' ');
 		cout.unsetf(ios::right);
 
+		// Setting second 4 digits
 		cout.width(4);
 		cout.fill('0');
 		cout.setf(ios::right);
@@ -58,6 +62,7 @@ namespace sdds {
 		cout.fill(' ');
 		cout.unsetf(ios::right);
 
+		// Setting third 4 digits
 		cout.width(4);
 		cout.fill('0');
 		cout.setf(ios::right);
@@ -65,6 +70,7 @@ namespace sdds {
 		cout.fill(' ');
 		cout.unsetf(ios::right);
 
+		// Setting fourth 4 digits
 		cout.width(4);
 		cout.fill('0');
 		cout.setf(ios::right);
@@ -73,6 +79,7 @@ namespace sdds {
 		cout.unsetf(ios::right);
 	}
 
+	// Sets the object to a safe empty state
 	void CC::set() {
 		m_Cardholdername = nullptr;
 		m_CVV = 0;
@@ -81,15 +88,18 @@ namespace sdds {
 		m_cardNumber = 0;
 	}
 
+	// deallocate memory and call set
 	void CC::cleanUp() {
 		delete[] m_Cardholdername;
 		set();
 	}
 
+	// check if the CC object is in a safe empty state or not
 	bool CC::isEmpty() const {
 		return m_Cardholdername == nullptr;
 	}
 
+	// copies values to the class
 	void CC::set(const char* cc_name,
 		unsigned long long cc_no,
 		short cvv,
@@ -99,6 +109,8 @@ namespace sdds {
 		cleanUp();
 
 		bool success = validate(cc_name, cc_no, cvv, expMon, expYear);
+
+		// when details match range provided initialize values to class CC
 		if (success)
 		{
 			m_Cardholdername = new char [strlen(cc_name) + 1];
@@ -110,6 +122,7 @@ namespace sdds {
 		}
 	}
 
+	// read values from console input device
 	bool CC::read() {
 		char name[71];
 		short cvv = 0, expiryMonth = 0, expiryYear = 0;
@@ -117,38 +130,56 @@ namespace sdds {
 
 		cleanUp();
 
+		// when cin fails
+		// clear cin and flush keyboard
 		if (cin.fail()) {
 			cin.clear();
 			cin.ignore(1000, '\n');
 		}
-		if (cin) cout << "Card holder name: ";
-		cin.getline(name, 71);
-		if (cin) cout << "Credit card number: ";
-		cin >> cardNo;
-		if (cin) cout << "Card Verification Value (CVV): ";
-		cin >> cvv;
-		if (cin) cout << "Expiry month and year (MM/YY): ";
-		cin >> expiryMonth;
-		cin.ignore(1, '/');
-		cin >> expiryYear;
+
+		// when cin has not failed
+		// get user inputs
+		if (cin) {
+			cout << "Card holder name: ";
+			cin.getline(name, 71);
+		}
+		if (cin) {
+			cout << "Credit card number: ";
+			cin >> cardNo;
+		}
+		if (cin) {
+			cout << "Card Verification Value (CVV): ";
+			cin >> cvv;
+		}
+		if (cin) {
+			cout << "Expiry month and year (MM/YY): ";
+			cin >> expiryMonth;
+			cin.ignore(1, '/');
+			cin >> expiryYear;
+		}
 		if (!cin.fail()) {
 			set(name, cardNo, cvv, expiryMonth, expiryYear);
 		}
+
 		cin.ignore(1000, '\n');
+
 		return !isEmpty();
 	}
 
+	// Display CC class information
 	void CC::display(int row) const {
 		bool null = isEmpty();
 		char name[1000];
 		if (!null) {
 			if (row > 0) {
+				// setting fill to row number column size
 				cout << "| ";
 				cout.width(3);
 				cout.setf(ios::right);
 				cout << row << " |";
 				cout.unsetf(ios::right);
 
+				// printing char array name
 				if (strlen(m_Cardholdername) > 30) {
 					strcpy(name, m_Cardholdername);
 					for (int i = 30; i < strlen(m_Cardholdername); i++) {
@@ -157,18 +188,22 @@ namespace sdds {
 					strcpy(m_Cardholdername, name);
 				}
 
+				// setting fill column to size of cardholder name
 				cout << " ";
 				cout.width(30);
 				cout.setf(ios::left);
 				cout << m_Cardholdername << " ";
 				cout.unsetf(ios::left);
 
+				// Displaying Card number
 				cout << "| ";
 				prnNumber();  
 				cout << " ";
 
+				// Displaying CVV number
 				cout << "| " << m_CVV << " |";
 
+				// setting fill to size of expiry month and year column
 				cout << " ";
 				cout.width(2);
 				cout.fill('| ');
