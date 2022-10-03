@@ -13,6 +13,7 @@ provided to complete my workshops and assignments.
 */
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <string.h>
 #include "CC.h"
 using namespace std;
 namespace sdds {
@@ -170,6 +171,7 @@ namespace sdds {
 	void CC::display(int row) const {
 		bool null = isEmpty();
 		char name[1000];
+		int nameLength;
 		if (!null) {
 			if (row > 0) {
 				// setting fill to row number column size
@@ -179,10 +181,12 @@ namespace sdds {
 				cout << row << " |";
 				cout.unsetf(ios::right);
 
+				nameLength = strlen(m_Cardholdername);
+
 				// printing char array name
-				if (strlen(m_Cardholdername) > 30) {
+				if (nameLength > 30) {
 					strcpy(name, m_Cardholdername);
-					for (int i = 30; i < strlen(m_Cardholdername); i++) {
+					for (int i = 30; i < nameLength; i++) {
 						name[i] = '\0';
 					}
 					strcpy(m_Cardholdername, name);
@@ -206,7 +210,7 @@ namespace sdds {
 				// setting fill to size of expiry month and year column
 				cout << " ";
 				cout.width(2);
-				cout.fill('| ');
+				cout.fill(' ');
 				cout.setf(ios::right);
 				cout << m_expMon << "/" << M_expYear << " |" << endl;
 				cout.fill(' ');
