@@ -23,19 +23,21 @@ namespace sdds {
         double mark{};
         char str[61]{};
         int len;
-
+        bool success = false;
         read(mark, fptr);
         read(str, fptr);
 
         len = strlen(str);
 
-        if ((read(mark, fptr) && read(str, fptr))==2) {
+        success = read(mark, fptr) && read(str, fptr);
+
+        if (success) {
             asmnt.m_mark = new double;
             asmnt.m_title = new char[len + 1];
             asmnt.m_mark = &mark;
             strcpy(asmnt.m_title, str);
         }
-        return (read(mark, fptr) && read(str, fptr)) ==2;
+        return success;
     }
 
     void freeMem(Assessment*& aptr, int size) {
@@ -51,12 +53,13 @@ namespace sdds {
 
 
     int read(Assessment*& aptr, FILE* fptr) {
-        int num, i, data = 0;
+        int num = 0, i, data = 0;
         int flag = 0;
-        read(num, fptr);
         aptr = new Assessment[num];
 
-        for (i = 0; i < num && flag == 0; i++) {
+        read(num, fptr);
+
+        for (i = 0; flag == 0 && i < num; i++) {
             if (read(aptr[i], fptr)) {
                 data++;
                 flag = 0;
