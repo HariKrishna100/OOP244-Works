@@ -1,0 +1,20 @@
+/*
+*****************************************************************************
+                          Diy - #4
+Full Name  : Harikrishna Paresh Patel
+Student ID#: 150739217
+Email      : Hpatel296@myseneca.ca
+Section    : NAA
+Date       : 09/10/2022
+Authenticity Declaration:
+I have done all the coding by myself and only copied the code that my professor
+provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+In workshop 4 i had been curious of the lab part which was very detailed and guided
+me put in practice the use of constructors of various kind one, two and three argument
+constructor and each of them were doing specific task and most importantly i didn't
+experience any memory leak challenges in this workshop because we had encapsulated this
+methods to free memory when the task is over in destructor method secondly returning the
+refrence to this object it showed me more potentials for being efficient 
