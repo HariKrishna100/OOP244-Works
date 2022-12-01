@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone 2
+Final Project Milestone 3
 Module: Vehicle
 Filename: Vehicle.h
 Version 1.0
@@ -23,18 +23,17 @@ namespace sdds {
       char m_licensePlate[9]{};
       char* m_makeModel{};
       int m_parkingSpot;
-   protected:
-      void setEmpty();
-      bool isEmpty()const;
-      const char* getLicensePlate();
-      const char* getMakeModel();
-      void setMakeModel(const char* modelCstr);
    public:
       Vehicle();
       Vehicle(const char* plateCstr, const char* model);
       Vehicle(const Vehicle& toCopy);
       Vehicle& operator=(const Vehicle& toCopy);
       ~Vehicle();
+      void setEmpty();
+      bool isEmpty()const;
+      const char* getLicensePlate();
+      const char* getMakeModel();
+      void setMakeModel(const char* modelCstr);
       int getParkingSpot()const;
       void setParkingSpot(int spotNo);
       bool operator==(const char* plateCstr);
