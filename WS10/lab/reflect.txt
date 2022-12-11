@@ -1,0 +1,25 @@
+*****************************************************************************
+                          Reflection - #10
+Full Name  : Harikrishna Paresh Patel
+Student ID#: 150739217
+Email      : Hpatel296@myseneca.ca
+Section    : NAA
+Date       : 1/12/2022
+Authenticity Declaration:
+I have done all the coding by myself and only copied the code that my professor
+provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop on function templates have helped me practice the concepts of templates
+the most important part you need to know while implimenting a template if the type of
+parameter changes of what you need for example if your doing a sum template you could have 
+double and int and you can use templates to solve the repitative code as the compiler will
+create a template of the types thats being used so if in your main you call int it will create
+a template for int in this workshop we had an array of data thats overloaded to create diffrent 
+objects car, student and employee and while implimenting the search template we need to retrive the 
+array by diffrent types to retrive string, int and double values of the objects it was so amazing to
+have just one boolean template to search for the value asked for and displaying it and it simply finished
+the lab after an hour of analysis of how the modules work, the power of templates is so great for more efficeint
+coding practices
+ 
